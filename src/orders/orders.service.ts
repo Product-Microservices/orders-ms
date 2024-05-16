@@ -167,7 +167,7 @@ export class OrdersService extends PrismaClient implements OnModuleInit {
 
   async createPaymentSession(order: OrderWithProducts) {
     const paymentSession = await firstValueFrom(
-      this.client.send('create.payment.session', {
+      this.client.send('create_payment_session', {
         orderId: order.id,
         currency: 'usd',
         items: order.OrderItem.map((item) => ({
